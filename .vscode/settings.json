@@ -1,0 +1,16 @@
+{
+	"luau-lsp.sourcemap.rojoProjectFile": "demo.project.json",
+
+	"[lua]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "JohnnyMorganz.stylua"
+	},
+	"[luau]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "JohnnyMorganz.stylua"
+	},
+
+	"stylua.targetReleaseVersion": "latest",
+
+	"cSpell.enabled": false
+}

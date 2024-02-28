@@ -1,0 +1,6 @@
+{
+	"name": "text-tools",
+	"tree": {
+		"$path": "src/TextTools"
+	}
+}

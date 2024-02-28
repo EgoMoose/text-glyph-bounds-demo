@@ -1,0 +1,102 @@
+{
+	"name": "text-tools-demo",
+	"tree": {
+		"$className": "DataModel",
+		"Workspace": {
+			"$className": "Workspace",
+			"Baseplate": {
+				"$className": "Part",
+				"$properties": {
+					"Anchored": true,
+					"Locked": true,
+					"Color": [0.38823, 0.37254, 0.38823],
+					"CFrame": [0, -10, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1],
+					"Size": [512, 20, 512]
+				}
+			},
+			"Cylinder": {
+				"$className": "Part",
+				"$properties": {
+					"Anchored": true,
+					"TopSurface": "Smooth",
+					"BottomSurface": "Smooth",
+					"Shape": "Cylinder",
+					"CFrame": [0, 10, -20, -1, 0, 0, 0, 0, 1, 0, 1, 0],
+					"Size": [20, 20, 20]
+				}
+			}
+		},
+		"ReplicatedStorage": {
+			"$className": "ReplicatedStorage",
+			"Packages": {
+				"$path": "Packages",
+				"TextTools": {
+					"$path": "default.project.json"
+				}
+			}
+		},
+		"StarterGui": {
+			"$className": "StarterGui",
+			"DemoScreenGui": {
+				"$className": "ScreenGui",
+
+				"Demos": {
+					"$className": "Folder",
+
+					"ToBounds": {
+						"$path": "src/Demos/ToBounds.client.lua",
+						"$properties": {
+							"Disabled": false
+						}
+					},
+
+					"ToDecal": {
+						"$path": "src/Demos/ToDecal.client.lua",
+						"$properties": {
+							"Disabled": true
+						}
+					}
+				},
+
+				"Frame": {
+					"$className": "Frame",
+					"$properties": {
+						"Position": {"UDim2": [[0.5, 0], [0.5, 0]]},
+						"Size": {"UDim2": [[0, 401], [0, 300]]},
+						"AnchorPoint": [0.5, 0.5],
+				
+						"BackgroundColor3": [1, 1, 1],
+						"BorderSizePixel": 0
+					},
+
+					"TextBox": {
+						"$className": "TextBox",
+						"$properties": {
+							"Size": {"UDim2": [[1, 0], [1, 0]]},
+							"BackgroundTransparency": 1,
+							"ClipsDescendants": true,
+
+							"MultiLine": true,
+							"ClearTextOnFocus": false,
+			
+							"FontFace": {
+								"Font": {
+									"family": "rbxasset://fonts/families/GothamSSm.json",
+									"weight": "Bold",
+									"style": "Normal"
+								}
+							},
+							
+							"Text": "Hello from EgoMoose!\nRoblox 支持的任何事情我都支持",
+							"TextColor3": [0, 0, 0],
+							"TextWrapped": true,
+							"TextSize": 62,
+							"TextScaled": false,
+							"RichText": true
+						}
+					}
+				}
+			}
+		}
+	}
+}
