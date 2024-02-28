@@ -176,16 +176,16 @@ local function getSortedBboxes(bboxGroups: { [string]: { Rect } }, textSize: num
 	return bboxes
 end
 
+local function isRedChannelDominant(r: number, g: number, b: number, _a: number)
+	return r > 0 and g == 0 and b == 0
+end
+
 local function getGlyphBounds(image: Image, textSize: number, textRect: Rect)
 	local visited = {}
 	local bboxGroups: { [string]: { Rect } } = {
 		green = {},
 		blue = {},
 	}
-
-	local function isRedChannelDominant(r: number, g: number, b: number, _a: number)
-		return r > 0 and g == 0 and b == 0
-	end
 
 	for h = 1, image.size.Y do
 		for w = 1, image.size.X do
@@ -252,9 +252,9 @@ local function rgbChannelsToAlphaWhite(image: Image)
 	for h = 1, image.size.Y do
 		for w = 1, image.size.X do
 			local pixelIndex = image:GetPixelIndex(w, h)
-			local r, g, b = image:GetRGBA(pixelIndex)
+			local r, g, b, a = image:GetRGBA(pixelIndex)
 
-			if r == 1 then
+			if isRedChannelDominant(r, g, b, a) then
 				image:SetRGBA(pixelIndex, 1, 1, 1, 0)
 			else
 				image:SetRGBA(pixelIndex, 1, 1, 1, g + b)
