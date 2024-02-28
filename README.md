@@ -75,3 +75,13 @@ The main downside here is that since this isn't a run-time creation you can't ch
 An actual good use-case would be to create a plugin that can take any text and turn it into an image. We can't pull the trigger on this quite yet as Roblox doesn't currently let you upload editable images, but it seems like it's planned!
 
 ![](images/LiveImageGeneration.gif)
+
+## Building the demo
+
+To build the demo simply run:
+
+```
+rojo build demo.project.json --output demo.rbxl
+```
+
+Then you can enable / disable different demo scripts under the `Demo` folder.
