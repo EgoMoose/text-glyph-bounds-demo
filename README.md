@@ -4,7 +4,7 @@ This repository is a demo of a very hacky method I created to get accurate glyph
 
 I do not condone using this in a live game as it has considerable performance implications and requires a gui to flash on screen momentarily.
 
-Why am I sharing this then? Well in the words of [@BoatBomber:](https://x.com/BoatbomberRBLX/status/1762224612132454432)
+Why am I sharing this then? Well in the words of [@boatbomber:](https://x.com/BoatbomberRBLX/status/1762224612132454432)
 > I don't care how hacky this is, please open source it. There's so much value here, and open sourcing the methods may help others figure out less hacky methods.
 
 ## How does this work?
