@@ -34,6 +34,9 @@ I want to use this section to highlight a few specific implementation details
 
 #### CaptureService x1.25
 
+**EDIT:**
+> As it turns out this section isn't true! The factor that CaptureService scales by is actually dependant on your OS settings. In my case on windows I scale everything up by 125%. This isn't a deal breaker, but something you may need to consider depending who's using this code.
+
 Fun fact: The screenshots taken by CaptureService upscale by a factor of 1.25.
 
 This means that when converting the screenshot into the cropped EditableImage we also have to consider down-scaling. This can blur the image slightly because we're losing a bit of detail due to bilinear interpolation. Luckily, from my testing this has yet to cause any issues.

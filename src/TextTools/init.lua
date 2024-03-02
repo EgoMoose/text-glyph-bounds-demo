@@ -21,8 +21,6 @@ export type GlyphBBox = {
 	children: { Rect },
 }
 
-local CAPTURE_SCALE = 1.25
-
 local module = {}
 
 -- Private
@@ -303,11 +301,11 @@ function module.convert(textFrame: TextGuiObject, glyphBboxes: boolean?): (Edita
 
 	local result: EditableImage
 	screenshot(function(content: string)
-		local topbarHeight = getTopbarHeight()
-		local inset = Vector2.new(0, math.floor(topbarHeight * CAPTURE_SCALE) + 1)
-
 		local editImage = AssetService:CreateEditableImageAsync(content)
 		local captureSize = editImage.Size
+		local captureScale = captureSize.X / workspace.CurrentCamera.ViewportSize.X
+
+		assert(captureScale == 1, "Captures are being scaled, this probably means your OS settings are scaling apps")
 
 		local function clamp(v: Vector2)
 			-- stylua: ignore
@@ -317,7 +315,9 @@ function module.convert(textFrame: TextGuiObject, glyphBboxes: boolean?): (Edita
 			)
 		end
 
-		editImage:Crop(clamp(inset), clamp(inset + (textFrameAbsSize * CAPTURE_SCALE)))
+		local topbarHeight = getTopbarHeight()
+		local inset = Vector2.new(0, math.floor(topbarHeight * captureScale))
+		editImage:Crop(clamp(inset), clamp(inset + (textFrameAbsSize * captureScale)))
 		editImage:Resize(textFrameAbsSize)
 
 		result = editImage
